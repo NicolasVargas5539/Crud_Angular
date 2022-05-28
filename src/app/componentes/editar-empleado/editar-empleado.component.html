@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center tamaño">
+        <div class="col-8 align-self-center">
+            <div class="card">
+                <div class="card-header" style="color:white;">
+                    Editar Empleado
+                </div>
+                <hr>
+                <div class="card-body">
+                    <form ngNativeValidate [formGroup]="formularioDelEmpleado" (ngSubmit)="enviarDatos()">
+                        <!-- Accion de editar -->
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input required formControlName="nombre" type="text" class="form-control"
+                                aria-describedby="helpId" placeholder="Escribe tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo</label>
+                            <input required formControlName="correo" type="email" class="form-control"
+                                aria-describedby="helpId" placeholder="Escribe tu correo">
+                        </div>
+                        <div class="btn-group" role="group" aria-label="">
+                            <button type="submit" class="btn btn-warning">Modificar Registro</button>
+                            <button type="button" routerLink="/listar-empleado/"
+                                class="btn btn-primary">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center tamaño">
+        <div class="col-8 align-self-center">
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn btn-success" routerLink="/agregar-empleado/">Agregar Empleado</a>
+                </div>
+                <div class="card-body">
+                    <h3>Empleados</h3>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let empleado of Empleados; let iControl=index"> <!-- Ciclo que muestra los datos  -->
+                                <td>{{empleado.id}}</td>
+                                <td>{{empleado.nombre}}</td>
+                                <td>{{empleado.correo}}</td>
+                                <td>
+                                    <a class="btn btn-info" routerLink="/editar-empleado/{{ empleado.id }}">Editar</a> | 
+                                    <a class="btn btn-danger" (click)="borrarRegistro(empleado.id,iControl)" role="button">Borrar</a>  <!-- borrar, borra el registro y el iControl borra la tabla donde esta almacenado -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
